@@ -9,6 +9,7 @@ dotenv.config();
 
 //routes
 const authRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin/auth");
 
 //MongoDB Connection
 mongoose
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 
 //routeMiddleware
 app.use("/api", authRoutes);
+app.use("/api", adminRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running at port: ${process.env.PORT}`);
