@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 dotenv.config();
 
 //routes
-const userRoute = require("./routes/auth");
+const authRoutes = require("./routes/auth");
 
 //MongoDB Connection
 mongoose
@@ -25,7 +25,7 @@ mongoose
 app.use(bodyParser.json());
 
 //routeMiddleware
-app.use("/api", userRoute);
+app.use("/api", authRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running at port: ${process.env.PORT}`);
