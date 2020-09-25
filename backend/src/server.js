@@ -15,6 +15,7 @@ mongoose
   .connect(`mongodb://localhost:27017/${process.env.MONGO_DB_NAME}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
   })
   .then(() => {
     console.log("MongoDB Connected!");
