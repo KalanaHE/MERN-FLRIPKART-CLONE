@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 dotenv.config();
 
 //routes
-const userRoute = require("./routes/user");
+const userRoute = require("./routes/auth");
 
 //MongoDB Connection
 mongoose
