@@ -1,10 +1,14 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>
+      {/* <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand> */}
+      <Link className="navbar-brand" to="/">
+        Admin Dashboard
+      </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -23,7 +27,17 @@ const Header = () => {
       </NavDropdown> */}
         </Nav>
         {/* <Nav.Link href="#home">Home</Nav.Link> */}
-        <Nav.Link href="#link">Signin</Nav.Link>
+        {/* <Nav.Link href="#link">Signin</Nav.Link> */}
+        <li className="nav-item" style={{ listStyle: "none" }}>
+          <NavLink className="nav-link" to="/signin">
+            Signin
+          </NavLink>
+        </li>
+        <li className="nav-item" style={{ listStyle: "none" }}>
+          <NavLink className="nav-link" to="/signup">
+            Signup
+          </NavLink>
+        </li>
       </Navbar.Collapse>
     </Navbar>
   );
