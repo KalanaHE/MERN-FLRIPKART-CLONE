@@ -1,6 +1,5 @@
 const Category = require("../models/category");
 const slugify = require("slugify");
-const category = require("../models/category");
 
 exports.addCategory = (req, res) => {
   const categoryObj = {
@@ -22,6 +21,6 @@ exports.addCategory = (req, res) => {
 exports.getCategories = (req, res) => {
   Category.find({}).exec((error, categories) => {
     if (error) return res.status(400).json({ error });
-    if (categories) return res.status(201).json({ categories });
+    if (categories) return res.status(200).json({ categories });
   });
 };
